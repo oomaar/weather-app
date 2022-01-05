@@ -1,9 +1,14 @@
+// Require Express to run server and routes
+const express = require("express");
+const cors = require("cors");
+const bodyParser = require("body-parser");
+
 // Setup empty JS object to act as endpoint for all routes
 projectData = {};
 
-// Require Express to run server and routes
-
 // Start up an instance of app
+const app = express();
+app.use(cors());
 
 /* Middleware*/
 //Here we are configuring express to use body-parser as middle-ware.
@@ -17,3 +22,7 @@ app.use(express.static('website'));
 
 
 // Setup Server
+const port = 5500;
+app.listen(port, () => {
+    console.log(`Server is up and running on port: ${port}`);
+});
