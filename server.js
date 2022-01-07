@@ -21,8 +21,8 @@ app.use(cors());
 app.use(express.static('website'));
 
 // Routes
-app.get("/", (req, res) => res.send(projectData));
-app.post("/", (req, res) => projectData = req.body);
+app.get("/add", (req, res) => res.send(projectData));
+app.post("/add", (req, res) => projectData = req.body);
 
 // Setup Server
 const port = 5500;
