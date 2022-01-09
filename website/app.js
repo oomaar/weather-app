@@ -1,11 +1,11 @@
-const feeling = document.getElementById("feelings");
-const zipCode = document.getElementById("zip");
 const apiKey = "584befef1f6116016438014a9b30ff2a";
 
 let d = new Date();
 let newDate = d.getMonth() + '.' + d.getDate() + '.' + d.getFullYear();
 
 document.getElementById("generate").addEventListener("click", async () => {
+    const feeling = document.getElementById("feelings");
+    const zipCode = document.getElementById("zip");
     const baseURL = `https://api.openweathermap.org/data/2.5/weather?zip=${zipCode.value}&appid=${apiKey}&units=imperial`;
     const res = await fetch(baseURL).then(data => data.json());
 
