@@ -11,10 +11,7 @@ app.use(express.static('website'));
 
 let projectData = {};
 
-app.get("/all", (req, res) => {
-    res.send(projectData);
-    console.log(projectData);
-});
+app.get("/all", (req, res) => res.send(projectData));
 
 app.post("/add", (req, res) => {
     Data = {
@@ -23,7 +20,6 @@ app.post("/add", (req, res) => {
         feeling: req.body.feeling
     }
     projectData = Data;
-    console.log(projectData);
     res.end();
 });
 
